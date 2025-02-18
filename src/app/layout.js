@@ -21,14 +21,40 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="bg-mobileSvg bg-no-repeat bg-cover bg-center h-screen text-white"
       >
-        <nav className="w-screen bg-green-700 text-white">
-          <Link href="/home">Home</Link>
-          <Link href="/resume">Resume</Link>
-          <Link href="/projects">My Projects</Link>
+        <nav className="w-screen bg-navbar grid justify-items-center p-4 text-3xl">
+          
+          <Link href="/" className="pb-4">
+          <p className="relative group">
+            <span>Home</span>
+            <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
+            <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
+          </p>
+          </Link>
+          <Link href="/resume" className="pb-4">
+          <p className="relative group">
+            <span>Resume</span>
+            <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
+            <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
+          </p>
+          </Link>
+          <Link href="/work">
+          <p className="relative group">
+            <span>My Work</span>
+            <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
+            <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
+          </p>
+          </Link>
         </nav>
+        
         {children}
+
+        <footer className="text-center">
+          <h3>Contact Me</h3>
+          <p>Email: desqui048@west-mec.org</p>
+          <p>&copy; 2024 My Portfolio</p>
+        </footer>
       </body>
     </html>
   );
