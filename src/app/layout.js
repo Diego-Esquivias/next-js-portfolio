@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,9 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className="bg-mobileSvg bg-no-repeat bg-cover bg-center h-screen text-white"
+        className="bg-mobileSvg bg-fixed bg-cover bg-center h-screen text-white"
       >
-        <nav className="w-screen bg-navbar grid justify-items-center p-4 text-3xl">
+        <nav className="w-screen bg-navbar grid justify-items-center p-5 text-3xl border-2 border-white rounded-xl">
           
           <Link href="/" className="pb-4">
           <p className="relative group">
@@ -50,9 +51,15 @@ export default function RootLayout({ children }) {
         
         {children}
 
-        <footer className="text-center">
-          <h3>Contact Me</h3>
-          <p>Email: desqui048@west-mec.org</p>
+        <footer className="w-full text-center bg-navbar p-5 mt-5 text-xl border-2 border-white rounded-xl">
+          <h3 className="font-bold">Contact Me</h3>
+          <p className="py-4">Email: desqui048@west-mec.org</p>
+          <div className="flex justify-center items-center pb-4">
+            <Link href={"https://github.com/Diego-Esquivias"} target="_blank">
+              <FaGithub className="mr-3" size={25} />
+            </Link>
+            <p>Github: Diego Esquivias</p>
+          </div>
           <p>&copy; 2024 My Portfolio</p>
         </footer>
       </body>
