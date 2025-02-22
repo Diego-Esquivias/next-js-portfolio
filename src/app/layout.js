@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 
 const geistSans = Geist({
@@ -24,29 +25,36 @@ export default function RootLayout({ children }) {
       <body
         className="bg-mobileSvg bg-fixed bg-cover bg-center h-screen text-white"
       >
-        <nav className="w-screen bg-navbar grid justify-items-center p-5 text-3xl border-2 border-white rounded-xl">
-          
-          <Link href="/" className="pb-4">
-          <p className="relative group">
-            <span>Home</span>
-            <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
-            <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
-          </p>
+        <nav className="w-screen bg-navbar flex items-center justify-between p-5 text-3xl border-2 border-white rounded-xl max-w-full">
+          {/* Logo on the Left */}
+          <Link href="/">
+            <Image
+              src="https://res.cloudinary.com/dom4vyzw7/image/upload/v1740195679/myLogo_kvthbt.png"
+              alt="My logo"
+              width={150}
+              height={150}
+              className="rounded-2xl"
+            />
           </Link>
-          <Link href="/resume" className="pb-4">
-          <p className="relative group">
-            <span>Resume</span>
-            <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
-            <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
-          </p>
-          </Link>
-          <Link href="/work">
-          <p className="relative group">
-            <span>My Work</span>
-            <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
-            <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
-          </p>
-          </Link>
+
+          {/* Links - Stacked on mobile, row on large screens */}
+          <div className="flex flex-col lg:flex-row lg:space-x-8 lg:space-y-0 lg:items-center lg:justify-center items-start space-y-4">
+            <Link href="/" className="relative group lg:text-4xl">
+              <span>Home</span>
+              <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
+              <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
+            </Link>
+            <Link href="/resume" className="relative group lg:text-4xl">
+              <span>Resume</span>
+              <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
+              <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
+            </Link>
+            <Link href="/work" className="relative group lg:text-4xl">
+              <span>My Work</span>
+              <span className="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-r-lg"></span>
+              <span className="absolute -bottom-1 right-1/2 w-0 h-1 bg-white group-hover:w-1/2 group-hover:transition-all rounded-l-lg"></span>
+            </Link>
+          </div>
         </nav>
         
         {children}

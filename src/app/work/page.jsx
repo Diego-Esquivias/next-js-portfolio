@@ -6,12 +6,12 @@ import Image from "next/image";
 const workPage = () => {
   return (
     <>
-    <h1 className='text-center text-4xl py-5'>My Work</h1>
+    <h1 className='text-center text-4xl lg:text-6xl py-5'>My Work</h1>
 
     {/* Gallery for my work */}
-    <div className='flex w-screen flex-col'>
+    <div className='flex w-screen flex-col lg:flex-row lg:flex-wrap lg:justify-center lg:gap-1'>
         {/* Each Item */}
-        <div className='w-3/4 m-auto text-center bg-blocks p-5 rounded-xl'>
+        <div className='w-3/4 lg:w-1/3 m-auto text-center bg-blocks p-5 rounded-xl'>
             {/* Title with github link to project */}
             <div className='flex justify-center items-center'>
               <Link href={"https://github.com/Diego-Esquivias/Calculator-Assignment"} target="_blank">
@@ -32,7 +32,7 @@ const workPage = () => {
             </Link>
         </div>
 
-        <div className='w-3/4 mx-auto text-center bg-blocks p-5 rounded-xl my-5 '>
+        <div className='w-3/4 lg:w-1/3 mx-auto text-center bg-blocks p-5 rounded-xl my-5 '>
             <div className='flex justify-center items-center'>
               <Link href={"https://github.com/Diego-Esquivias/Tic-Tac-Toe"} target="_blank">
                 <FaGithub className="mr-3" size={30} />
@@ -51,7 +51,7 @@ const workPage = () => {
             </Link>
         </div>
 
-        <div className='w-3/4 m-auto text-center bg-blocks p-5 rounded-xl'>
+        <div className='w-3/4 lg:w-1/3 m-auto text-center bg-blocks p-5 rounded-xl'>
             <div className='flex justify-center items-center'>
               <Link href={"https://github.com/Diego-Esquivias/Card-Game-Memory"} target="_blank">
                 <FaGithub className="mr-3" size={30} />
