@@ -19,6 +19,7 @@ export default function Home() {
     <>
       <h1 className="text-center py-10 text-5xl">Welcome to my Portfolio</h1>
       
+      {/* Image of myself */}
       <Image
         src="https://res.cloudinary.com/dom4vyzw7/image/upload/v1740168471/IMG_2671_o6ztuq.png"
         alt="Image Of Me"
